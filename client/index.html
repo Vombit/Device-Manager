@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <script src="js/vue.js"></script>
+      <link rel="stylesheet" href="style/index.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+<!-- Шапка -->
+  <header>
+    <nav>
+        <a href="settings_general.html" class="nav-bar nav-header">&#9776</a>
+        <h1>Мониторинг электропитания</h1>
+    </nav>
+    <a href="">Главная</a>
+    <a href="#settings">Настройки</a>
+    <a href="#fff">Ещё хрень</a>
+  </header>
+<!-- /Шапка -->
+<main>
+  <br id="settings"/><br id="fff"/>
+<!-- Данные источника -->
+  <div id="power_monitoring">
+    <h1>Источник на X1 -> Фидер 1</h1>
+      <div class="container">
+          <div class="nav"><a href="settings_x1_ x2.html" class="nav-bar">&#9776</a></div>
+          <div id="testtt">
+            <p><input type="checkbox" id="Voltage" ref="Voltage"> Напряжение в норме</p>
+            <p><input type="checkbox" id="Voltage_dips" ref="Voltage_dips"> Провалы напр. не зафиксированы</p>
+            <p><input type="checkbox" id="Overvoltage" ref="Overvoltage"> Перенапряжения не зафиксированы</p>
+            <p><input type="checkbox" id="Electricity_quality" ref="Electricity_quality"> Качество электроэнергии</p>
+            <button @click="getNameId">test</button>
+          </div>
+          <div class="nav">
+            <a class='button' href="logs_x1_x2.html">Журнал</a>
+            <a style="background-color: #ff7676;" class='button' href="changing_x1_x2.html">Измерения</a>
+          </div>
+          <table class="table-container-main">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>U:</th>
+                    <th>I:</th>
+                </tr>
+            </thead>
+            <tbody id="power_monitoringX1">
+              <tr v-for="item of items.X1.Phase_A">
+                    <td>Фаза А:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+                <tr v-for="item of items.X1.Phase_B">
+                    <td>Фаза В:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+                <tr v-for="item of items.X1.Phase_C">
+                    <td>Фаза С:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+      <h1>Источник на X2 -> Фидер 2</h1>
+      <div class="container">
+          <div class="nav"><a href="settings_x1_ x2.html" class="nav-bar">&#9776</a></div>
+          <p><input type="checkbox"> Напряжение в норме</p>
+          <p><input type="checkbox"> Провалы напр. не зафиксированы</p>
+          <p><input type="checkbox"> Перенапряжения не зафиксированы</p>
+          <p><input type="checkbox"> Качество электроэнергии</p>
+          <div class="nav">
+            <a class='button' href="logs_x1_x2.html">Журнал</a>
+            <a style="background-color: #ff7676;" class='button' href="changing_x1_x2.html">Измерения</a>
+        </div>
+          <table class="table-container-main">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>U:</th>
+                    <th>I:</th>
+                </tr>
+            </thead>
+            <tbody id="power_monitoringX2">
+              <tr v-for="item of items.X2.Phase_A">
+                    <td>Фаза А:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+                <tr v-for="item of items.X2.Phase_B">
+                    <td>Фаза В:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+                <tr v-for="item of items.X2.Phase_C">
+                    <td>Фаза С:</td>
+                    <td class="color-td">{{ item.U }} В</td>
+                    <td class="color-td">{{ item.I }} А</td>
+                </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+<!-- /Данные источника -->
+<!-- Настройки -->
+    <div id="settings">
+
+    </div>
+<!-- /Настройки -->
+<!-- Ешо страничка -->
+<div id="fff">
+
+</div>
+<!-- /Ешо страничка -->
+</main>
+
+
+    <button type="submit" id="submit" onclick="X1();X2();">Push</button> <!-- update data page -->
+    <script src="js/index.js"></script> <!-- load script -->
+  </body>
+</html>
