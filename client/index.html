@@ -10,31 +10,36 @@
 <!-- Шапка -->
   <header>
     <nav>
-        <a href="settings_general.html" class="nav-bar nav-header">&#9776</a>
+        <br id="back"/>
+        <a href="#settings" class="nav-bar nav-header">&#9776</a>
+        <a id="back" href="" class="nav-bar nav-header">&#10094</a>
         <h1>Мониторинг электропитания</h1>
     </nav>
     <a href="">Главная</a>
     <a href="#settings">Настройки</a>
-    <a href="#fff">Ещё хрень</a>
+    <a href="#settings_x1_x2">Настройкиx1x2</a>
+    <a href="#logs_x1_x2">Журнал</a>
+    <a href="#changing_x1_x2">Изменения</a> 
+    <a href="#wifi_settings">Настройки wifi</a> 
   </header>
 <!-- /Шапка -->
 <main>
-  <br id="settings"/><br id="fff"/>
+  <br id="settings"/><br id="settings_x1_x2"/><br id="logs_x1_x2"/><br id="changing_x1_x2"/><br id="wifi_settings"/>
 <!-- Данные источника -->
   <div id="power_monitoring">
     <h1>Источник на X1 -> Фидер 1</h1>
       <div class="container">
-          <div class="nav"><a href="settings_x1_ x2.html" class="nav-bar">&#9776</a></div>
-          <div id="testtt">
+          <div class="nav"><a href="#settings_x1_x2" class="nav-bar">&#9776</a></div>
+          <div id="X1checkbox">
             <p><input type="checkbox" id="Voltage" ref="Voltage"> Напряжение в норме</p>
             <p><input type="checkbox" id="Voltage_dips" ref="Voltage_dips"> Провалы напр. не зафиксированы</p>
             <p><input type="checkbox" id="Overvoltage" ref="Overvoltage"> Перенапряжения не зафиксированы</p>
             <p><input type="checkbox" id="Electricity_quality" ref="Electricity_quality"> Качество электроэнергии</p>
-            <button @click="getNameId">test</button>
+            <button  class="X1checkbox" @click="X1checkbox" style="display: none">test</button>
           </div>
           <div class="nav">
-            <a class='button' href="logs_x1_x2.html">Журнал</a>
-            <a style="background-color: #ff7676;" class='button' href="changing_x1_x2.html">Измерения</a>
+            <a class='button' href="#logs_x1_x2">Журнал</a>
+            <a style="background-color: #ff7676;" class='button' href="#changing_x1_x2">Измерения</a>
           </div>
           <table class="table-container-main">
             <thead>
@@ -65,14 +70,17 @@
       </div>
       <h1>Источник на X2 -> Фидер 2</h1>
       <div class="container">
-          <div class="nav"><a href="settings_x1_ x2.html" class="nav-bar">&#9776</a></div>
-          <p><input type="checkbox"> Напряжение в норме</p>
-          <p><input type="checkbox"> Провалы напр. не зафиксированы</p>
-          <p><input type="checkbox"> Перенапряжения не зафиксированы</p>
-          <p><input type="checkbox"> Качество электроэнергии</p>
+        <div class="nav"><a href="#settings_x1_x2" class="nav-bar">&#9776</a></div>
+          <div id="X2checkbox">
+            <p><input type="checkbox" id="Voltage2" ref="Voltage2"> Напряжение в норме</p>
+            <p><input type="checkbox" id="Voltage_dips2" ref="Voltage_dips2"> Провалы напр. не зафиксированы</p>
+            <p><input type="checkbox" id="Overvoltage2" ref="Overvoltage2"> Перенапряжения не зафиксированы</p>
+            <p><input type="checkbox" id="Electricity_quality2" ref="Electricity_quality2"> Качество электроэнергии</p>
+            <button  class="X2checkbox" @click="X2checkbox" style="display: none">test</button>
+          </div>
           <div class="nav">
             <a class='button' href="logs_x1_x2.html">Журнал</a>
-            <a style="background-color: #ff7676;" class='button' href="changing_x1_x2.html">Измерения</a>
+            <a style="background-color: #ff7676;" class='button' href="#changing_x1_x2">Измерения</a>
         </div>
           <table class="table-container-main">
             <thead>
@@ -105,18 +113,207 @@
 <!-- /Данные источника -->
 <!-- Настройки -->
     <div id="settings">
-
+      <div class="container">
+        <div class="nav"><a href="#settings_x1_x2" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка мониторинга источника на X1</p>
+        <div class="nav-settingsgen"><a href="#" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка мониторинга источника на X2</p>
+        <p><input  type="checkbox" name="1"> Контроль сфазированности источников X1,X2</p>        
+      </div>
+      <div class="container">
+        <div class="nav"><a href="#wifi_settings" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка Wifi</p> 
+        <div class="nav"><a href="#" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка Ethernet</p>
+        <div class="nav"><a href="#" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка RS-485</p>
+        <div class="nav"><a href="#" class="nav-bar">&#10095</a></div>
+        <p class="settings-p">Настройка V.23</p>
+      </div>  
     </div>
 <!-- /Настройки -->
-<!-- Ешо страничка -->
-<div id="fff">
-
+<!-- Настройка x1x2 -->
+  <div id="settings_x1_x2">
+    <h1>Мониторинга источника X1</h1>
+      <div class="container">
+        <div class="nav-settings1">
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+        </div>
+        <p class="settings-p">Контроль напряжения источника</p>
+        <p class="settings-p">Контроль провала напряжения</p>
+        <p class="settings-p">Контроль перенапряжения</p>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль пиков фазного напряжения</p>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль последовательности фаз А->B->C</p>
+        <div class="nav-settings2">
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+            <a class='button' href="#">Уставка</a>
+        </div>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль тока нейтрали</p>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль RMS напр. и тока гармоники</p>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль RMS напр. и тока гармоники</p>
+        <p class="settings-p"><input  type="checkbox" name="1"> Контроль RMS напр. и тока гармоники</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <center>
+        <a class='button' href="#">Также для источника X2</a>   
+    </center>
+  </div>
+<!-- /Настройка x1x2 -->
+<!-- Журнал -->
+<div id="logs_x1_x2">
+  <h1>Источника на X1</h1>
+      <center>
+       <table class="content-table">
+           <thead>
+               <tr>
+                   <td>Событие</td>
+                   <td>Началось</td>
+                   <td>Завершилось</td>
+                   <td>Детали</td>
+               </tr>
+           </thead>
+           <tbody>
+            <tr>
+                <td>Провал U фазы В</td>
+                <td>30/08/21 14:11:20</td>
+                <td>30/08/21 14:11:21</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5-я гарм. прев</td>
+                <td>01/09/21 01:11:44</td>
+                <td>30/08/21 10:11:44</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Фаза В, U не в норме</td>
+                <td>10/10/21 08:15:46</td>
+                <td></td>
+                <td></td>
+            </tr>              
+           </tbody>
+       </table>   
+      </center>
 </div>
-<!-- /Ешо страничка -->
+<!-- /Журнал -->
+<!-- Изменения -->
+<div id="changing_x1_x2">
+  <h1>Источника на Х1</h1>
+    <center>
+        <table class="table-container-change">
+            <tbody>
+                <tr>
+                    <td align="left" width="133px">Данные фазы А</td>
+                    <td class="color-td" width="133px">123, 32 В</td>
+                    <td class="color-td">16,52 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Данные фазы В</td>
+                    <td class="color-td">237,22 В</td>
+                    <td class="color-td" width="133px" >15,52 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Данные фазы В</td>
+                    <td class="color-td">234,22 В</td>
+                    <td class="color-td">10,26 А</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table-container-change">
+            <tbody>
+                <tr>
+                    <td align="left" width="133px">Данные 3й гармоники</td>
+                    <td class="color-td" width="133px">11,2 В</td>
+                    <td class="color-td" width="133px">1,15 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Данные 5й гармоники</td>
+                    <td class="color-td">4,7 В</td>
+                    <td class="color-td">0,26 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Данные 6й гармоники</td>
+                    <td class="color-td">0,087 В</td>
+                    <td class="color-td">0,006 А</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table-container-change">
+            <tbody>
+                <tr>
+                    <td align="left">Расчетное значение тока нейтрали</td>
+                    <td class="color-td">3,15 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Измеренное значение тока нейтрали</td>
+                    <td class="color-td">2,89 А</td>
+                </tr>
+                <tr>
+                    <td align="left">Частота</td>
+                    <td class="color-td">49,8 Гц</td>
+                </tr>
+                <tr>
+                    <td align="left">Отклонение частоты</td>
+                    <td class="color-td">0,198 Гц</td>
+                </tr>
+                <tr>
+                    <td align="left">Суммарный коэффициент гарм.искажений</td>
+                    <td class="color-td">4,11</td>
+                </tr>
+                <tr>
+                    <td align="left">Макс. кратковременная доза фликера</td>
+                    <td class="color-td">0,82</td>
+                </tr>
+                <tr>
+                    <td align="left">Макс. длительная доза фликера</td>
+                    <td class="color-td">0,31</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
+</div>
+<!-- /Изменения -->
+<!-- Настройка wifi -->
+<div id="wifi_settings">
+  <h1>Wifi network</h1>
+      <center>
+          <div>
+              <p>Имя узла<input type="text" size="15"></p>
+            <h6 style="color: rgb(90, 90, 90);" >Это имя напечатать в браузере для доступа к web-iface</h6>
+          </div>
+      </center>
+      <div class="container">
+        <p><input type="checkbox" name="1"> Режим точки доступа (AP-mode)</p>
+        <p>SSID<input type="text"></p>
+        <p><input type="checkbox"> Без пароля</p>
+        <p><input type="checkbox"> Пароль WPA2-PSK</p>
+        <p>WPA2-PSK key<input type="text"></p>
+      </div>
+      <div class="container">
+            <p><input  type="checkbox" name="1">Режим подключения (STA-mode)</p>
+            <p>AP SSID<input type="text"></p>
+            <p>WPA2-PSK key<input type="password" ></p>
+            <p><input  type="checkbox" name="1"> Включить связь по MQTT</p>
+            <p>Имя устойства<input type="text"></p>
+            <p>IP брокера<input type="text"></p>
+            <p>Пароль брокера<input type="text"></p>
+            <p>Ip брокера 2<input type="text"></p>
+            <p>Пароль брокера 2<input type="text"></p>
+      </div>
+</div>
+<!-- /Настройка wifi -->
+
 </main>
 
 
-    <button type="submit" id="submit" onclick="X1();X2();">Push</button> <!-- update data page -->
+    <!-- <button type="submit" id="submit" onclick="X1();X2();">Push</button> update data page -->
     <script src="js/index.js"></script> <!-- load script -->
   </body>
 </html>
